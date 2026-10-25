@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "asset_id": "18e728cc-97c6-4a6c-b14d-616f936c6aab",
+  "project_id": "a6b3a2ee-eb55-4f76-b2f3-4250d44bf72f",
+  "url": "/__l5e/assets-v1/18e728cc-97c6-4a6c-b14d-616f936c6aab/mahiru-vision-nosimd.wasm",
+  "r2_key": "a/v1/a6b3a2ee-eb55-4f76-b2f3-4250d44bf72f/18e728cc-97c6-4a6c-b14d-616f936c6aab/mahiru-vision-nosimd.wasm",
+  "original_filename": "mahiru-vision-nosimd.wasm",
+  "size": 10960242,
+  "content_type": "application/wasm",
+  "created_at": "2026-10-07T17:16:12Z"
+}
