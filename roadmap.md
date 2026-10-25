@@ -1,0 +1,12 @@
+# Mahiru updates
+- [x] Refine the existing raster rig with independently masked hair, eyes, brows and mouth; 37 tests pass and automatic compilation reports build OK. Simulated-media browser checks cover 14 expressions, mouth closure, reduced motion, desktop/mobile clearance and portrait hiding. Uploaded part sheets are unavailable; original artwork retained.
+- [x] Refine the existing dark-haired reference design, layered hair, detailed eyes/hoodie, and audio-driven animation; 21 tests and automatic compilation pass, 14 expressions and landscape camera clearance verified. No uploaded reference file was available; used the existing Mahiru design.
+- [x] Upgrade only the avatar artwork and smooth expressions; 21 tests and automatic compilation pass, desktop/landscape framing and existing startup flow checked.
+- [x] Rename product and all user-facing labels to Mahiru.
+- [x] Rework animated SVG avatar and landscape composition.
+- [x] Combined media permission gate and private camera preview.
+- [x] JPEG camera frames and Live lifecycle/error handling.
+- [x] Verify seven tests, automatic compilation checks, preview, orientation, and available Gemini credentials.
+- [x] Save GEMINI_API_KEY as a server-side secret (new AQ. or legacy AIza key formats accepted).
+- [x] Session-ready race fix, Leda voice, 7052 entry gate, camera menu, shoulders-up layered avatar (29 tests, build).
+- [ ] Verify a real continuous Gemini conversation, live camera understanding, and audible barge-in. Requires a human microphone/camera conversation; automated checks use simulated media. Outside this avatar-only upgrade.
