@@ -1,0 +1,283 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * Design system definition.
+ *
+ * The @theme inline block maps CSS custom properties to Tailwind utility
+ * classes (e.g. --color-primary -> bg-primary, text-primary).
+ *
+ * The :root and .dark blocks define the actual color values using oklch.
+ * All colors MUST use oklch format.
+ *
+ * To add a new semantic color:
+ * 1. Add the variable to :root (light value) and .dark (dark value)
+ * 2. Register it in @theme inline as --color-<name>: var(--<name>)
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  --radius: 0.625rem;
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.129 0.042 264.695);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.129 0.042 264.695);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.129 0.042 264.695);
+  --primary: oklch(0.208 0.042 265.755);
+  --primary-foreground: oklch(0.984 0.003 247.858);
+  --secondary: oklch(0.968 0.007 247.896);
+  --secondary-foreground: oklch(0.208 0.042 265.755);
+  --muted: oklch(0.968 0.007 247.896);
+  --muted-foreground: oklch(0.554 0.046 257.417);
+  --accent: oklch(0.968 0.007 247.896);
+  --accent-foreground: oklch(0.208 0.042 265.755);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.984 0.003 247.858);
+  --border: oklch(0.929 0.013 255.508);
+  --input: oklch(0.929 0.013 255.508);
+  --ring: oklch(0.704 0.04 256.788);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --sidebar: oklch(0.984 0.003 247.858);
+  --sidebar-foreground: oklch(0.129 0.042 264.695);
+  --sidebar-primary: oklch(0.208 0.042 265.755);
+  --sidebar-primary-foreground: oklch(0.984 0.003 247.858);
+  --sidebar-accent: oklch(0.968 0.007 247.896);
+  --sidebar-accent-foreground: oklch(0.208 0.042 265.755);
+  --sidebar-border: oklch(0.929 0.013 255.508);
+  --sidebar-ring: oklch(0.704 0.04 256.788);
+}
+
+.dark {
+  --background: oklch(0.129 0.042 264.695);
+  --foreground: oklch(0.984 0.003 247.858);
+  --card: oklch(0.208 0.042 265.755);
+  --card-foreground: oklch(0.984 0.003 247.858);
+  --popover: oklch(0.208 0.042 265.755);
+  --popover-foreground: oklch(0.984 0.003 247.858);
+  --primary: oklch(0.929 0.013 255.508);
+  --primary-foreground: oklch(0.208 0.042 265.755);
+  --secondary: oklch(0.279 0.041 260.031);
+  --secondary-foreground: oklch(0.984 0.003 247.858);
+  --muted: oklch(0.279 0.041 260.031);
+  --muted-foreground: oklch(0.704 0.04 256.788);
+  --accent: oklch(0.279 0.041 260.031);
+  --accent-foreground: oklch(0.984 0.003 247.858);
+  --destructive: oklch(0.704 0.191 22.216);
+  --destructive-foreground: oklch(0.984 0.003 247.858);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.551 0.027 264.364);
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.208 0.042 265.755);
+  --sidebar-foreground: oklch(0.984 0.003 247.858);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.984 0.003 247.858);
+  --sidebar-accent: oklch(0.279 0.041 260.031);
+  --sidebar-accent-foreground: oklch(0.984 0.003 247.858);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.551 0.027 264.364);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+  }
+}
+
+/* ---------- Mahiru ---------- */
+:root {
+  --stage: oklch(0 0 0);
+  --stage-fg: oklch(0.85 0 0);
+  --stage-dim: oklch(0.45 0 0);
+  --mahiru-skin: oklch(0.96 0.025 57);
+  --mahiru-skin-shade: oklch(0.87 0.047 44);
+  --mahiru-blush: oklch(0.75 0.12 15);
+  --mahiru-hair: oklch(0.19 0.012 285);
+  --mahiru-hair-light: oklch(0.32 0.019 285);
+  --mahiru-hair-deep: oklch(0.11 0.006 285);
+  --mahiru-iris: oklch(0.48 0.095 58);
+  --mahiru-iris-light: oklch(0.76 0.12 77);
+  --mahiru-pupil: oklch(0.22 0.03 49);
+  --mahiru-eye-white: oklch(0.99 0 0);
+  --mahiru-line: oklch(0.17 0.015 30);
+  --mahiru-mouth: oklch(0.48 0.12 20);
+  --mahiru-cloth: oklch(0.23 0.008 275);
+  --mahiru-cloth-shade: oklch(0.15 0.008 275);
+  --mahiru-hat: oklch(0.12 0 0);
+  --mahiru-hat-edge: oklch(0.3 0 0);
+  --mahiru-hat-band: oklch(0.23 0 0);
+  --mahiru-cloth-trim: oklch(0.34 0.012 275);
+  --mahiru-cord: oklch(0.48 0.007 275);
+  --mahiru-jewelry: oklch(0.78 0.02 85);
+  --mahiru-tear: oklch(0.92 0.033 220);
+  --mahiru-accent: oklch(0.7 0.16 20);
+  --mahiru-glow: oklch(0.7 0.1 220);
+  --st-connecting: oklch(0.7 0.02 260);
+  --st-listening: oklch(0.75 0.14 160);
+  --st-thinking: oklch(0.8 0.13 85);
+  --st-speaking: oklch(0.72 0.12 220);
+  --st-interrupted: oklch(0.75 0.15 50);
+}
+
+html, body { background: var(--stage); overscroll-behavior: none; }
+.stage {
+  position: fixed; inset: 0; background: var(--stage); color: var(--stage-fg);
+  display: flex; align-items: flex-end; justify-content: center; overflow: hidden;
+  -webkit-tap-highlight-color: transparent; user-select: none;
+}
+.mahiru-avatar { height: auto; width: min(88dvh, calc(60vw - 48px)); max-height: 96dvh; -webkit-mask-image: linear-gradient(to bottom, #000 82%, transparent); mask-image: linear-gradient(to bottom, #000 82%, transparent); animation: mahiru-in 1.2s ease-out both; }
+@keyframes mahiru-in { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+
+.gate { align-self: center; display: flex; flex-direction: column; align-items: center; gap: 1.25rem; padding: 2rem; text-align: center; }
+.gate-mic {
+  display: grid; place-items: center; width: 5rem; height: 5rem; border-radius: 9999px;
+  border: 1px solid var(--stage-dim); color: var(--stage-fg); transition: transform .2s, border-color .2s;
+}
+.gate-mic:hover { border-color: var(--stage-fg); transform: scale(1.05); }
+.gate-mic:disabled { opacity: .5; animation: pulse-soft 1.4s infinite; }
+.gate-hint, .gate-text { font-size: .8rem; letter-spacing: 0; color: var(--stage-dim); }
+.gate-text { color: var(--stage-fg); max-width: 18rem; }
+.gate-btn {
+  display: inline-flex; gap: .5rem; align-items: center; font-size: .8rem; padding: .5rem 1rem;
+  border-radius: 9999px; border: 1px solid var(--stage-dim); color: var(--stage-fg);
+}
+
+.status-dot {
+  position: fixed; bottom: max(1rem, env(safe-area-inset-bottom)); left: 50%; translate: -50% 0;
+  width: 6px; height: 6px; border-radius: 9999px; background: var(--st-connecting); opacity: .7;
+  transition: background .3s;
+}
+.status-dot[data-state="connecting"] { animation: pulse-soft 1s infinite; }
+.status-dot[data-state="listening"] { background: var(--st-listening); }
+.status-dot[data-state="thinking"] { background: var(--st-thinking); animation: pulse-soft .8s infinite; }
+.status-dot[data-state="speaking"] { background: var(--st-speaking); }
+.status-dot[data-state="interrupted"] { background: var(--st-interrupted); }
+.status-retry {
+  position: fixed; bottom: max(1rem, env(safe-area-inset-bottom)); left: 50%; translate: -50% 0;
+  padding: .5rem; border-radius: 9999px; color: var(--destructive); border: 1px solid var(--destructive);
+}
+@keyframes pulse-soft { 50% { opacity: .25; } }
+
+/* ---------- Orientation ----------
+ * Phones = touch-primary devices whose short side is phone-sized.
+ * Portrait phone: hide the stage, show only a rotate cue.
+ * Landscape phone: character fills the full dynamic viewport height.
+ * Desktop/laptop (fine pointer or large screens): untouched.
+ */
+.rotate-prompt { display: none; }
+
+@media (pointer: coarse) and (orientation: portrait) and (max-width: 600px) {
+  .rotate-prompt {
+    position: fixed; inset: 0; z-index: 10; display: grid; place-items: center;
+    background: var(--stage); color: var(--stage-dim);
+  }
+  .rotate-icon { width: 2.75rem; height: 2.75rem; animation: rotate-cue 2.4s ease-in-out infinite; }
+  .rotate-prompt ~ .mahiru-avatar,
+  .rotate-prompt ~ .camera-preview,
+  .rotate-prompt ~ .camera-menu,
+  .rotate-prompt ~ .status-dot,
+  .rotate-prompt ~ .status-retry { visibility: hidden; }
+}
+
+@media (pointer: coarse) and (orientation: landscape) and (max-height: 600px) {
+  .stage { height: 100dvh; padding-inline: env(safe-area-inset-left) env(safe-area-inset-right); }
+  .mahiru-avatar { width: min(88dvh, calc(60vw - 48px)); max-height: 96dvh; }
+  .status-dot, .status-retry { bottom: max(.5rem, env(safe-area-inset-bottom)); left: max(1rem, env(safe-area-inset-left)); translate: none; }
+}
+
+@keyframes rotate-cue {
+  0%, 20% { transform: rotate(0deg); }
+  50%, 70% { transform: rotate(-90deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.camera-preview {
+  position: fixed; right: max(12px, env(safe-area-inset-right));
+  bottom: max(12px, env(safe-area-inset-bottom)); width: min(20vw, 260px);
+  aspect-ratio: 16 / 9; object-fit: cover; transform: scaleX(-1);
+  border: 1px solid var(--stage-dim); border-radius: 8px; background: var(--stage);
+}
+.stage .gate-mic { background: var(--stage); height: 5rem; padding: 0; }
+.stage .gate-btn { background: var(--stage); }
+.stage .status-retry { background: var(--stage); height: auto; }
+@media (prefers-reduced-motion: reduce) {
+  .mahiru-avatar, .rotate-icon, .status-dot, .gate-mic { animation: none; }
+}
+
+.camera-preview[data-visible="false"] { opacity: 0; pointer-events: none; }
+/* Stable corner anchor: stays put when the preview is hidden. */
+.camera-menu {
+  position: fixed; z-index: 5; width: 28px; height: 28px; border-radius: 9999px;
+  right: calc(max(12px, env(safe-area-inset-right)) + 4px);
+  bottom: calc(max(12px, env(safe-area-inset-bottom)) + min(20vw, 260px) * 9 / 16 - 32px);
+  background: color-mix(in oklch, var(--stage) 70%, transparent); color: var(--stage-fg);
+}
+.camera-menu[data-error="true"] { color: var(--destructive); }
+.camera-menu-error { font-size: .75rem; color: var(--destructive); padding: .25rem .5rem; }
+.entry-slot { color: var(--stage-fg); border-color: var(--stage-dim); width: 3rem; height: 3.5rem; font-size: 1.25rem; }
+.entry-field { position: relative; }
+.entry-input {
+  width: 10rem; height: 3rem; text-align: center; font-size: 1.5rem; letter-spacing: .6em; padding-left: .6em;
+  background: var(--stage); color: var(--stage-fg); border: 1px solid var(--stage-dim); border-radius: 10px; outline: none;
+}
+.entry-input:focus { border-color: var(--stage-fg); }
+.entry-toggle { position: absolute; right: -2.25rem; top: 50%; translate: 0 -50%; color: var(--stage-dim); padding: .25rem; }
